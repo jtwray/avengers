@@ -4,24 +4,32 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
-			chars: ['Luke', 'Leia', 'Han', 'Chewy', 'C3-P0']
+			title: 'May the Force Be With You!',
+			chars: []
 		};
 	}
 
+	componentDidMount() {
+		const chars = ['Luke', 'Leia', 'Han', 'Chewy', 'C3-P0'];
+		console.log('CDM Called');
+		this.setState({ chars });
+	}
+
 	render() {
+		console.log('Render called: here is state ', this.state);
 		const { chars } = this.state;
 		return (
   <div>
-    <h2>May The Force be with You!</h2>
-    {chars.map((char, index) => [
+    <h2>{this.state.title}</h2>
+    {chars.map((char, index) => (
       <div key={char + index}>
-        <p>Name:</p>
+        
         {char}
       </div>
-					])}
+				))}
   </div>
 		);
 	}
