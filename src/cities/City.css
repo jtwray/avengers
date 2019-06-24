@@ -1,0 +1,13 @@
+.cityCard {
+	background: red;
+	box-shadow: rgb(125, 134, 165) 4px 4px 5px -3.5px;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+	max-width: 100%;
+	width: 160px;
+
+}
+.city{
+	margin:1rem;
+}

@@ -1,6 +1,6 @@
 /* eslint-disable no-tabs ,use 'esversion: 6' */
 import React, { Component } from 'react';
-
+import CitiesIndex from './cities/CitiesIndex';
 import './App.css';
 
 class App extends Component {
@@ -21,15 +21,15 @@ class App extends Component {
 	render() {
 		console.log('Render called: here is state ', this.state);
 		const { chars } = this.state;
+		const { title } = this.state;
 		return (
   <div>
-    <h2>{this.state.title}</h2>
-    {chars.map((char, index) => (
-      <div key={char + index}>
-        
-        {char}
-      </div>
+    <h2>{title}</h2>
+    {chars.map(char => (
+      <div key={`${char}`}>{char}</div>
 				))}
+    <hr />
+    <CitiesIndex />
   </div>
 		);
 	}
